@@ -16,6 +16,6 @@ jobs:
       - name: m Start
         run: minikube start
 
-       - name: m Start2
+       - name: Execute YAML file
         run: |
-        kubbectl applay -f deployment.yaml deployment.aps/examle-app-created
+        bash kubbectl applay -f deployment.yaml deployment.aps/examle-app-created
