@@ -16,6 +16,3 @@ jobs:
 
       - name: Save Build Time to File
         run: echo $(date) > build_time.txt
-
-      - name: Push Docker Image
-        run: docker push your_image_name:latest
