@@ -18,4 +18,4 @@ jobs:
 
       - name: Execute YAML file
         run: |
-        kubectl applay -f deployment.yaml deployment.aps/examle-app-created
+        kubectl applay -f deployment.yaml
