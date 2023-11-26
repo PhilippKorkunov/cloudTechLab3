@@ -1,4 +1,3 @@
-FROM ubuntu:latest
-
-
-CMD ["echo", "Docker image built at: $(date)"]  # Вывод времени сборки
+# Dockerfile
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html
