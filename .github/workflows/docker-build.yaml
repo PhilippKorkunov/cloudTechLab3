@@ -16,5 +16,4 @@ jobs:
       - name: m Start
         run: minikube start
 
-      - name: dep
-        uses: deployment
+      
