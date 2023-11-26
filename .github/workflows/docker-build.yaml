@@ -16,17 +16,29 @@ jobs:
       - name: m Start
         run: minikube start
 
-      - name: Execute YAML file
+      - name: Install kubectl
         run: |
           curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
           chmod +x ./kubectl
           sudo mv ./kubectl /usr/local/bin/kubectl
           kubectl version --client
+
+
+      - name: Execute deplyment.yaml
+        run: |
           kubectl apply -f deployment.yaml
+
+      - name: Execute sevice.yaml
+        run: |
+          kubectl apply -f service.yaml
+
+      - name: Execute sevice.yaml
+        run: |
+          docker build -t example-app:1.0 .
 
 
         
       
-      - name: docker login 
-        run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      # - name: docker login 
+      #   run: |
+      #     docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
