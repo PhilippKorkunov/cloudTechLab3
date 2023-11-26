@@ -17,4 +17,4 @@ jobs:
         run: minikube start
 
       - name: dep
-      uses: ./deployment.yaml
+      uses: deployment.yaml
