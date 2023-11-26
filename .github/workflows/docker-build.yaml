@@ -16,5 +16,6 @@ jobs:
       - name: m Start
         run: minikube start
 
-      - name: dep
-      uses: deployment.yaml
+       - name: m Start2
+        run: |
+        kubbectl applay -f deployment.yaml deployment.aps/examle-app-created
