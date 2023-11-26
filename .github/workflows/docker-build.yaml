@@ -22,7 +22,7 @@ jobs:
           chmod +x ./kubectl
           sudo mv ./kubectl /usr/local/bin/kubectl
           kubectl version --client
-          kubectl applay -f deployment.yaml
+          kubectl apply -f deployment.yaml
 
 
         
