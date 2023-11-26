@@ -17,11 +17,12 @@ jobs:
         run: minikube start
 
       - name: Execute YAML file
-        run: curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
-        run: chmod +x ./kubectl
-        run: sudo mv ./kubectl /usr/local/bin/kubectl
-        run: kubectl version --client
-        run: kubectl deployment.yaml
+        run: |
+          curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
+          chmod +x ./kubectl
+          sudo mv ./kubectl /usr/local/bin/kubectl
+          kubectl version --client
+          kubectl deployment.yaml
 
 
         
