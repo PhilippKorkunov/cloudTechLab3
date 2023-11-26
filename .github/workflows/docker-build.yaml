@@ -32,9 +32,13 @@ jobs:
         run: |
           kubectl apply -f service.yaml
 
-      - name: Execute sevice.yaml
+      - name: docker build
         run: |
           docker build -t example-app:1.0 .
+
+      - name: service
+        run: |
+          minikube service example-app-service
 
 
         
