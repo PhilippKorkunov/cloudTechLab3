@@ -16,9 +16,15 @@ jobs:
       - name: m Start
         run: minikube start
 
-      # - name: Execute YAML file
-      #   run: |
-      #   kubectl applay -f deployment.yaml
+      - name: Execute YAML file
+        run: curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
+        run: chmod +x ./kubectl
+        run: sudo mv ./kubectl /usr/local/bin/kubectl
+        run: kubectl version --client
+        run: kubectl deployment.yaml
+
+
+        
       
       - name: docker login 
         run: |
