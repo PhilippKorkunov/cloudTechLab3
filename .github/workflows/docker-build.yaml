@@ -16,6 +16,10 @@ jobs:
       - name: m Start
         run: minikube start
 
-      - name: Execute YAML file
+      # - name: Execute YAML file
+      #   run: |
+      #   kubectl applay -f deployment.yaml
+      
+      - name: docker login 
         run: |
-        kubectl applay -f deployment.yaml
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
