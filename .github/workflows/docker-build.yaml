@@ -13,6 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-
       - name: m Start
         run: minikube start
+
+      - name: dep
+        uses: deployment
